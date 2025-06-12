@@ -30,7 +30,7 @@ def convolve_1d(signal: list[int], kernel: list[int]) -> list[int]:
         for k in range(klen):
             # This should be where the current summed value should be in the final list
             curr_idx = i - k
-            if curr_idx < slen and curr_idx >= 0:
+            if curr_idx >= 0 and curr_idx < slen:
                 curr += signal[curr_idx] * kernel[k]
         convolved.append(curr)
     return convolved
