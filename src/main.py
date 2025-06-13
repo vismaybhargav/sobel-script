@@ -22,9 +22,6 @@ def convolve_1d(signal: list[int], kernel: list[int]) -> list[int]:
 
     convolved: list[int] = []
 
-    reversed = kernel.copy()
-    reversed.reverse()
-
     for i in range(slen + klen - 1):
         curr = 0
         for k in range(klen):
@@ -34,6 +31,10 @@ def convolve_1d(signal: list[int], kernel: list[int]) -> list[int]:
                 curr += signal[curr_idx] * kernel[k]
         convolved.append(curr)
     return convolved
+
+def convolve_2d(signal: list[list[int]], kernel: list[list[int]]) -> list[list[int]]:
+    return [[]]
+
 
 if __name__ == "__main__":
     main()
